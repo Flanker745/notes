@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: gray;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .main {
+        width: 70%;
+        border: 2px solid white;
+        height: 500px;
+    }
+
+    .head {
+        width: 100%;
+        border: 1px solid black;
+        background-color: yellow;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+
+    }
+
+    .input {
+        width: 100%;
+        height: 50px;
+        font-size: 30px;
+        padding-left: 20px;
+    }
+
+    .note {
+        width: 100%;
+        height: 82%;
+        background-color: transparent;
+
+    }
+
+    .here {
+        width: 100%;
+        /* height: 82%; */
+        padding: 5px 20px;
+        background-color: transparent;
+        color: white;
+        font-size: 30px;
+        border: 0px;
+        text-align: unset;
+    }
+    .sav{
+        width: 25%;
+        background-color: black;
+        padding: 20px 10px;
+        height: 100vh;
+
+    }
+    .h1{
+        color: white;
+        text-align: center;
+    
+    }
+    h2{
+        background-color: yellow;
+        padding: 5px 10px;
+        min-height: 50px;
+        text-align: justify;
+        /* overflow: scroll; */
+    }
+    h3{
+        background-color: gray;
+        padding: 8px 10px;
+        margin-bottom: 20px;
+        min-height: 50px;
+        /* overflow: scroll; */
+        
+    }
+    span{
+        float: right;
+        font-size: 35px;
+    }
+
+    /* h1{
+        width: ;
+        display: inline;
+    } */
+</style>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <h1>Heading</h1>
+            <button class="save">save</button>
+        </div>
+        <div class="title">
+            <input type="text" placeholder="Title.." class="input">
+        </div>
+        <input type="text" class="here" placeholder="Type Here">
+
+
+    </div>
+    <div class="sav">
+        <h1 class="h1">Note</h1 >
+        <div class="app">
+            
+        </div>
+    </div>
+</body>
+<script src="jquery.jq"></script>
+<script>
+    var a=$(".input")
+    var b=$(".here")
+    $(".save").click(()=>{
+        
+        $(".app").append(`<div class="inThis">
+                <h2>${a.val()}<span>&times;</span></h2>
+                <h3>${b.val()}</h3>
+            </div>`)
+            a.val(" ")
+            b.val(" ")
+
+        $("span").click(function (){
+            $(this).parent().parent().remove()
+        })
+    })
+</script>
+
+</html>
